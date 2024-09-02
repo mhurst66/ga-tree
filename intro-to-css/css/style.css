@@ -1,0 +1,56 @@
+body {
+    --brand-color: #5865F2;
+  }  
+  h1 {
+    color: var(--brand-color);
+  }
+  
+  a {
+    background-color: var(--brand-color);
+    color: #FFFFFF;
+  }
+  
+  button {
+    background-color: var(--brand-color);
+    color: #FFFFFF;
+  }
+  
+  #comments {
+    border: 2px solid var(--brand-color);
+  }
+  
+  footer {
+    background-color: var(--brand-color);
+    color: #FFFFFF;
+  }
+    
+/* body {
+    margin: 0;
+    background-color: lightgrey;
+} */
+div {
+    color: blue;
+}
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+  }
+ul {
+    margin: 0;
+}
+.important {
+    color: red;
+    font-weight: bold;
+  }  
+.super-cool {
+    border: 2px solid blue;
+}
+#about {
+    font-style: italic;
+    color: hotpink;
+  }
+  
+  
