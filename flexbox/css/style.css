@@ -1,0 +1,180 @@
+/* Basic CSS Reset */
+/* makes things more consistent by removing intrinsic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* What is Flexbox? */
+/* Flexbox is a tool that you'll be using to create flexible box layouts. It is uysed to create reponsive layouts that will look "nice" on multiple devices */
+/* Try out flexbox froggy!
+https://flexboxfroggy.com/ */
+
+/* Fonts */
+/* When choosing fonts you'll have three different types of fonts */
+/* System fonts, web safe fonts, imported fonts */
+/* System fonts - fonts that are already installed on your specific OS */
+/* Web Safe fonts - fonts that are available on any computer */
+/* Imported Fonts - fonts from a library like Google Fonts, fontsource, etc. */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap'); */
+
+/* .fascinate-inline-regular {
+  font-family: "Fascinate Inline", system-ui;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+/* body {
+    background-color: gray;
+    font-family: sans-serif;
+    margin: 0;
+  } */
+
+  /* To implement flexbox you will need to update the "display" propery to be flexbox.
+  
+  When you do so you'll see that the layout wil shift from being vertically stacked to horizontally stacked
+  
+  Once flexbox is active ytou will be able to use flexbox properties to control your content or your layout
+  
+  The most common examples are gouing to be justify-content, align-items, flex direction, and flex-wrap.*/
+  
+  .flex-parent {
+    background-color: black;
+    display: flex;
+    /* after implementing flexbox */
+    height: 600px;
+    /* justify-content - flex start, flex-end, center, space-between, space-evenly, and space-around */
+    justify-content: space-around;
+    /* align-items - center, flex-start, flex-end */
+    align-items: center;
+    /* flex-direction - row, column, row-reverse, and column-reverse */
+    flex-direction: column;
+  }
+/*   
+  .flex-child {
+    font-size: 48px;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #one {
+    background-color: #f0f0f0;
+    color: #707070;
+  }
+  
+  #two {
+    background-color: #d0d0d0;
+    color: #505050;
+  }
+  
+  #three {
+    background-color: #b0b0b0;
+    color: #303030;
+  }
+  
+  #four {
+    background-color: #909090;
+    color: #101010;
+  } */
+  
+  /* Responsive Design */
+  /* two approaches to responsive design - desktop first or mobile first */
+  /* in developer tools you can switch to a mobile view */
+  /* tailwindDocs */
+  /* desktop first - design the desktop version of your application first and then scale down from there */
+  /* mobile first - design the mobile version of your application first and then scale up from there */
+  body {
+    background-color: lightsalmon;
+    margin: 0px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+/* basic media query example will include "@media (min-width or max-width: some-pixel-amount){} */
+/* min-width example */
+/* @media (min-width: 600px) {
+  body {
+    background-color: lightgreen;
+  }
+} */
+/* width range example using min-width and max-width */
+/* @media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-color: rebeccapurple;
+  }
+} */
+
+/* order matters when writing media queries */
+/* incorrect way */
+
+/* @media (min-width: 600px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+@media (min-width: 800px) {
+  body {
+    background-color: gainsboro;
+  }
+} */
+
+/* Correct way
+allows the code to function as intended instead of overwriting eachother */
+
+/* @media (min-width: 800px) {
+  body {
+    background-color: gainsboro;
+  }
+}
+@media (min-width: 600px) and (max-width: 799px) {
+  body {
+    background-color: lightgreen;
+  }
+} */
+
+/* Clamp - clamp(min font size, scaler(calculated value), max font size */
+/* .responsive-header {
+  font-size: 24px;
+  font-size: clamp(1rem, 2.5vw + 1rem, 3rem);
+} */
+
+/* @media (min-width: 800px) {
+  .responsive-header {
+    font-size: 60px;
+  }
+} */
+
+
+/* Navbar example */
+nav {
+  font-size: 18px;
+  background-color: white;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+}
+#destinations {
+  display: none;
+}
+
+@media (min-width: 550px) {
+  #destinations {
+    display: flex;
+    gap: 4px;
+  }
+  #destinations-mobile {
+    display: none;
+  }
+}
+
+
+
+
+
+
