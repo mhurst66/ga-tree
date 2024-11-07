@@ -23,6 +23,7 @@ app.get('/somedata', (req, res) => {
 // these values are stored in a seperated object from req.params
 // stored in the object req.query
 // ?someKey=someValue
+// & = and
 // %20 = a space
 app.get('/hello', (req, res) => {
     // Accessing query parameters from the request
@@ -32,7 +33,7 @@ app.get('/hello', (req, res) => {
 
     // Using the query parameters to customize the response
     res.send(`Hello there, ${name}! I hear you are ${age} years old!`)
-});
+})
 
 
 app.get('/greet/:name', (req, res) => {
