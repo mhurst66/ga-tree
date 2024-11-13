@@ -32,19 +32,11 @@ const createTodo = async () => {
 const findTodos = async () => {
   const todos = await Todo.find({});
   console.log("All todos:", todos);
-};
-
-/*------------------------------- Run Queries -------------------------------*/
-
-const runQueries = async () => {
-  console.log('Queries running.');
-//   await createTodo()
-  await createSubtask()
+//   return todos
 };
 
 const createSubtask = async () => {
-    // Assume that the todo we want to create a
-    // sub-task for has the following id:
+    // Assume that the todo we want to create a sub-task for has the following id:
     const todoId = "6733eabc8027e6a92eeee58b";
     // Look up the todo by id, assign the returned object to `todo`
     const todo = await Todo.findById(todoId);
@@ -59,5 +51,13 @@ const createSubtask = async () => {
     // Save the parent document:
     await todo.save();
     console.log("Modified todo:", todo);
-  };
+};
+
+/*------------------------------- Run Queries -------------------------------*/
+
+const runQueries = async () => {
+  console.log('Queries running.');
+//   await createTodo()
+  await createSubtask()
+};
   
