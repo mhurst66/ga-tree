@@ -1,4 +1,3 @@
-// src/components/IncrementButton.jsx
 
 const IncrementButton = (props) => {
     return (
