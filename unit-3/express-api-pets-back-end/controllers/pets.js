@@ -66,7 +66,7 @@ router.put('/:petId', async (req, res) => {
 // DELETE
 router.delete('/:petId', async (req, res) => {
     try {
-        const deletedPet = await Pet.findByIdAndDelete(req.params.petID)
+        const deletedPet = await Pet.findByIdAndDelete(req.params.petId)
         if (!deletedPet) {
             res.status(404)
             throw new Error('Pet not found.')
