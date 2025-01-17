@@ -1,37 +1,126 @@
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+// import { useState } from 'react'
+// import { Link, useNavigate } from 'react-router-dom'
+// import { signup } from '../../services/authService'
+
+// const SignupForm = (props) => {
+//   const navigate = useNavigate()
+//   const [message, setMessage] = useState([''])
+//   const [formData, setFormData] = useState({
+//     username: '',
+//     password: '',
+//     passwordConf: '',
+//   })
+
+//   const updateMessage = (msg) => {
+//     setMessage(msg)
+//   }
+
+//   const handleChange = (e) => {
+//     setFormData(prev => ({
+//         ...prev,
+//         [e.target.name]: e.target.value
+//     }))
+//   }
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault()
+//     updateMessage('')
+//     try {
+//         const newUserResponse = await signup(formData)
+//         props.setUser(newUserResponse.user);
+//         navigate('/')
+//     } catch (err) {
+//        updateMessage(err.message) 
+//     }
+//   }
+
+//   const { username, password, passwordConf } = formData
+
+//   const isFormInvalid = () => {
+//     return !(username && password && password === passwordConf)
+//   }
+
+//   return (
+//     <main>
+//       <h1>Sign Up</h1>
+//       <p>{message}</p>
+//       <form onSubmit={handleSubmit}>
+//         <div>
+//           <label htmlFor="username">Username:</label>
+//           <input
+//             type="text"
+//             id="name"
+//             value={username}
+//             name="username"
+//             onChange={handleChange}
+//           />
+//         </div>
+//         <div>
+//           <label htmlFor="password">Password:</label>
+//           <input
+//             type="password"
+//             id="password"
+//             value={password}
+//             name="password"
+//             onChange={handleChange}
+//           />
+//         </div>
+//         <div>
+//           <label htmlFor="confirm">Confirm Password:</label>
+//           <input
+//             type="password"
+//             id="confirm"
+//             value={passwordConf}
+//             name="passwordConf"
+//             onChange={handleChange}
+//           />
+//         </div>
+//         <div>
+//           <button disabled={isFormInvalid()}>Sign Up</button>
+//           <Link to="/">
+//             <button>Cancel</button>
+//           </Link>
+//         </div>
+//       </form>
+//     </main>
+//   )
+// }
+
+// export default SignupForm
+
+
+import {useState} from 'react'
+import {Link, useNavigate} from 'react-router-dom'
 import { signup } from '../../services/authService'
 
 const SignupForm = (props) => {
   const navigate = useNavigate()
-  const [message, setMessage] = useState([''])
+  const [message, setMessage] = useState('')
   const [formData, setFormData] = useState({
     username: '',
     password: '',
-    passwordConf: '',
+    passwordConf: ''
   })
-
   const updateMessage = (msg) => {
     setMessage(msg)
   }
-
   const handleChange = (e) => {
     setFormData(prev => ({
-        ...prev,
-        [e.target.name]: e.target.value
+      ...prev,
+      [e.target.name]: e.target.value
     }))
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     updateMessage('')
     try {
-        const newUserResponse = await signup(formData)
-        props.setUser(newUserResponse.user);
-        navigate('/')
+      const newUserResponse = await signup(formData)
+      props.setUser(newUserResponse.user)
+      navigate('/')
     } catch (err) {
-       updateMessage(err.message) 
+      updateMessage(err.message)
     }
+
   }
 
   const { username, password, passwordConf } = formData
@@ -83,7 +172,7 @@ const SignupForm = (props) => {
         </div>
       </form>
     </main>
-  )
+  );
 }
 
 export default SignupForm
